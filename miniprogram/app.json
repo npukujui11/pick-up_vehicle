@@ -3,12 +3,28 @@
     "pages/search_vehicle/search_vehicle",
     "pages/me/me"
   ],
+  "tabBar": {
+    "list": [
+      {
+        "iconPath": "images/search-1.png",
+        "selectedIconPath": "images/search.png",
+        "pagePath": "pages/search_vehicle/search_vehicle",
+        "text": "车辆信息查询"
+      },
+      {
+        "iconPath": "images/tj-1.png",
+        "selectedIconPath": "images/tj.png",
+        "pagePath": "pages/me/me",
+        "text": "我的页面"
+      }
+    ]
+  },
   "window": {
-    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "取车系统",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": false
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"
