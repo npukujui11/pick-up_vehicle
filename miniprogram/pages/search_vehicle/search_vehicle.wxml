@@ -1,9 +1,54 @@
 <!--miniprogram/pages/search_vehicle/search_vehicle.wxml-->
-<view class="content" scroll-y="true">
-  <view class="search-bar">
-    <icon class="weui-icon-search_in-box" type="search" size="14"></icon>
-    <input placeholder="请输入车型" bindchange="inputChange"/>
-    <button type="primary" bindtap="queryBooks">查询</button>
-  </view>
-  <view class="header-bg"></view>
+<view class='section'>
+  <view class='title1'>VIN：</view>
+    <picker class='input' bindchange='company' value='{{index}}' range='{{com}}'>
+      <!--数据绑定-->
+      <view>{{com[index]}}</view>
+    </picker>
 </view>
+
+<view class='section'>
+  <view class='title2'>车型：</view>
+    <picker> </picker>
+<input class='input' type='number' bindinput='noinput' placeholder='请输入车型'></input></view>
+
+<view class='section'>
+  <view class='title3'>车辆阶段：</view>
+    <picker></picker>
+    <input class='input' type='number' bindinput='noinput' placeholder='请输入车辆阶段'></input></view>
+
+<view class='section'>
+  <view class='title4'>配置：</view>
+    <picker></picker>
+    <input class='input' type='number' bindinput='noinput' placeholder='请输入配置'></input></view>
+
+<view class='section'>
+  <view class='title5'>ECU：</view>
+    <picker></picker>
+    <input class='input' type='number' bindinput='noinput' placeholder='请输入发动机型号'></input></view>
+
+<view class='section'>
+  <view class='title6'>排放：</view>
+    <picker></picker>
+    <input class='input' type='number' bindinput='noinput' placeholder='请输入排放'></input></view>
+
+<view class='section'>
+  <view class='title6'>变速器：</view>
+    <picker></picker>
+    <input class='input' type='number' bindinput='noinput' placeholder='请输入变速器型号'></input></view>
+
+<view class='section'>
+  <view class='title6'>ECU供应商：</view>
+    <picker></picker>
+    <input class='input' type='number' bindinput='noinput' placeholder='请输入ECU供应商'></input></view>
+
+
+<button bindtap='search' size='mini' class='btn'>查询</button>
+<scroll-view scroll-y class='orderlist'>
+
+<!--列表渲染-->
+<view wx:for="{{jg.result.list}}" wx:key="this">
+<view class='jg2'>{{item.remark}}</view>
+<view class='jg1'>{{item.datetime}}</view>
+</view>
+</scroll-view>
