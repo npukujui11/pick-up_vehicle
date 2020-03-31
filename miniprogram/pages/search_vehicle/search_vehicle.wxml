@@ -1,74 +1,27 @@
 <!--miniprogram/pages/search_vehicle/search_vehicle.wxml-->
 <view class='section'>
-  <!--<view class='section__title'>发动机</view>-->
-    <picker bindchange="bindvehicle_engineChange" value="{{index_vehicle_engine}}" range="{{vehicle_engine}}">
+  <view class='section__title'>发动机：</view>
+    <picker bindchange="bindChangeEngine" value="{{indexEngine}}" range="{{dataEngine}}">
       <view class="picker">
-        发动机：{{default_vehicle_engine}}
+        {{dataEngine[indexEngine]}}
+      </view>
+    </picker>
+</view>
+
+<view class='section'>
+  <view class='section__title'>变速器：</view>
+    <picker bindchange="bindChangeEngine" value="{{indexEngine}}" range="{{dataEngine}}">
+      <view class="picker">
+        {{dataEngine[indexEngine]}}
       </view>
     </picker>
 </view>
     
 
-<view class='section'>
-  <!--<view class='section__title'>变速器</view>-->
-    <picker bindchange="bindvehicle_transmissionChange" value="{{index_vehicle_transmission}}" range="{{vehicle_transmission}}">
-      <view class="picker">
-      变速器：{{default_vehicle_transmission}}
-      </view>
-    </picker>
+<view class='searchButton'>
+  <button class="btn" bindtap="onSearchButton">
+    <image class='btnImg' src='../../images/search-bg.png' />查询
+  </button>
 </view>
 
 
-<view class='section'>
-  <!--<view class='section__title'>车辆阶段</view>-->
-    <picker bindchange="bindvehicle_phaseChange" value="{{index_vehicle_phase}}" range="{{vehicle_phase}}">
-      <view class="picker">
-      车辆阶段：{{default_vehicle_phase}}
-      </view>
-    </picker>
-</view>
-
-
-<view class='section'>
-  <!--<view class='title__section'>ECU供应商：</view>-->
-    <picker bindchange="bindvehicle_ecusupplierChange" value="{{index_vehicle_ecusupplier}}" range="{{vehicle_ecusupplier}}">
-      <view class="picker">
-      ECU供应商：{{default_vehicle_ecusupplier}}
-      </view>
-    </picker>
-</view>
-
-
-<view class='section'>
-  <!--<view class='title__section'>排放：</view>-->
-    <picker bindchange="bindvehicle_emissionChange" value="{{index_vehicle_emission}}" range="{{vehicle_emission}}">
-      <view class="picker">
-      排放：{{default_vehicle_emission}}
-      </view>
-    </picker>
-</view>
-
-
-<view class='section'>
-  <!--<view class='title__section'>配置：</view>-->
-    <picker bindchange="bindvehicle_configurationChange" value="{{index_vehicle_configuration}}" range="{{vehicle_configuration}}">
-      <view class="picker">
-      配置：{{default_vehicle_configuration}}
-      </view>
-    </picker>
-</view>
-
-
-<button class='btn' open-type='openSetting'>
-  <image class='btnImg' src='../../images/search-bg.png'></image>
-  <view>查询</view>
-</button>
-
-<scroll-view scroll-y class='orderlist'>
-
-<!--列表渲染-->
-<view wx:for="{{jg.result.list}}" wx:key="this">
-<view class='jg2'>{{item.remark}}</view>
-<view class='jg1'>{{item.datetime}}</view>
-</view>
-</scroll-view>
