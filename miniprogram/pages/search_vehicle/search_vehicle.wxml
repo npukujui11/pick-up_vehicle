@@ -59,7 +59,11 @@
 </view>
 
 
-<button bindtap='search' size='mini' class='btn'>查询</button>
+<button class='btn' open-type='openSetting'>
+  <image class='btnImg' src='../../images/search-bg.png'></image>
+  <view>查询</view>
+</button>
+
 <scroll-view scroll-y class='orderlist'>
 
 <!--列表渲染-->
