@@ -1,27 +1,70 @@
 <!--miniprogram/pages/search_vehicle/search_vehicle.wxml-->
-<view class='section'>
-  <view class='section__title'>发动机：</view>
-    <picker bindchange="bindChangeEngine" value="{{indexEngine}}" range="{{dataEngine}}">
-      <view class="picker">
-        {{dataEngine[indexEngine]}}
-      </view>
-    </picker>
-</view>
 
-<view class='section'>
-  <view class='section__title'>变速器：</view>
-    <picker bindchange="bindChangeEngine" value="{{indexEngine}}" range="{{dataEngine}}">
-      <view class="picker">
-        {{dataEngine[indexEngine]}}
-      </view>
-    </picker>
-</view>
-    
+<view class="page">
+  <form bindsubmit="formSubmit">
+    <view class='section'>
+      <view class='section__title'>发动机：</view>
+      <picker name="engine" bindchange="bindChangeEngine" value="{{indexEngine}}" range="{{typeEngine}}">
+        <view class="picker">
+          {{typeEngine[indexEngine]}}
+        </view>
+      </picker>
+    </view>
 
-<view class='searchButton'>
-  <button class="btn" bindtap="onSearchButton">
-    <image class='btnImg' src='../../images/search-bg.png' />查询
-  </button>
+    <view class='section'>
+      <view class='section__title'>变速器：</view>
+      <picker name="transmission" bindchange="bindChangeTransmission" value="{{indexTransmission}}" range="{{typeTransmission}}">
+        <view class="picker">
+          {{typeTransmission[indexTransmission]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <view class="section__title">车辆阶段：</view>
+      <picker name="pahse" bindchange="bindChangePhase" value="{{indexPhase}}" range="{{typePhase}}">
+        <view class="picker">
+          {{typePhase[indexPhase]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <view class="section__title">ECU供应商：</view>
+      <picker name="ecusupplier" bindchange="bindChangeEcusupplier" value="{{indexEcusupplier}}" range="{{typeEcusupplier}}">
+        <view class="picker">
+          {{typeEcusupplier[indexEcusupplier]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <view class="section__title">排放：</view>
+      <picker name="emission" bindchange="bindChangeEmission" value="{{indexEmission}}" range="{{typeEmission}}">
+        <view class="picker">
+          {{typeEmission[indexEmission]}}
+        </view>
+      </picker>
+    </view>
+
+    <view class="section">
+      <view class="section__title">配置：</view>
+      <picker name="configuration" bindchange="bindChangeConfiguration" value="{{indexConfiguration}}" range="{{typeConfiguration}}">
+        <view class="picker">
+          {{typeConfiguration[indexConfiguration]}}
+        </view>
+      </picker>
+    </view>
+        
+
+    <view class='searchButton'>
+      <button class="btn" form-type="submit">
+        <image class='btnImg' src='../../images/search-bg.png' />查询
+      </button>
+    </view>
+
+  </form>
+
 </view>
 
 
