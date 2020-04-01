@@ -96,6 +96,7 @@ Page({
     })
   },
 
+
   formSubmit: function (event) {
     //判断表单是否有改动
     if (this.data.indexConfiguration + this.data.indexEcusupplier + this.data.indexEmission + this.data.indexEngine + this.data.indexPhase + this.data.indexTransmission == 0) {
@@ -125,14 +126,21 @@ Page({
       }
       //console.log(whereCondition)
       db.collection('storage').where(whereCondition).get().then(res => {
-        console.log(res)
+        console.log('[数据库] [查询记录]:', res)
       }).catch(res => {
         console.log("报错")
         console.log(res)
       })
 
     }
+  },
     //页面跳转
+
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
   }
 
 })

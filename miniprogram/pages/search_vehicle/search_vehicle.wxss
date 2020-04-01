@@ -29,3 +29,14 @@
   border-radius: 98rpx;
   border: 0; 
 }
+
+
+.imagesize {
+ display: flex;                
+ justify-content: center;         
+}
+
+.imagesize image { 
+  width: 400rpx;
+  height: 400rpx;
+}

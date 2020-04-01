@@ -1,5 +1,10 @@
 <!--miniprogram/pages/search_vehicle/search_vehicle.wxml-->
 
+<view class='imagesize'>
+  <image src="../../images/eagle.png" class='in-image'></image>
+</view>
+    
+
 <view class="page">
   <form bindsubmit="formSubmit">
     <view class='section'>
@@ -67,4 +72,11 @@
 
 </view>
 
+
+<scroll-view scroll-y class='orderlist'>
+  <view wx:for="{{jg.result.list}}" wx:key="this">
+    <view class='jg2'>{{item.remark}}</view>
+    <view class='jg1'>{{item.datetime}}</view>
+  </view>
+</scroll-view>
 

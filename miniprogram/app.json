@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/search_vehicle/search_vehicle",
-    "pages/me/me"
+    "pages/me/me",
+    "pages/login/login"
   ],
   "tabBar": {
     "list": [
@@ -15,7 +16,7 @@
         "iconPath": "images/tj-1.png",
         "selectedIconPath": "images/tj.png",
         "pagePath": "pages/me/me",
-        "text": "我的页面"
+        "text": "我的"
       }
     ]
   },
