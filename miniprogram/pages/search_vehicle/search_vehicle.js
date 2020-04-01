@@ -45,7 +45,7 @@ Page({
       typePhase: $.addToSet('$车辆阶段'),
       typeEcusupplier: $.addToSet('$ECU供应商'),
       typeEmission: $.addToSet('$排放'),
-      typeConfiguration: $.addToSet('$排放')
+      typeConfiguration: $.addToSet('$配置')
     }).end().then(res => {
       //console.log(res)
       //更新数据
@@ -101,14 +101,36 @@ Page({
     if (this.data.indexConfiguration + this.data.indexEcusupplier + this.data.indexEmission + this.data.indexEngine + this.data.indexPhase + this.data.indexTransmission == 0) {
       console.log("未选择，报错")
     } else {
-      console.log(event.detail.value)
+      //console.log(event.detail.value)
       //构造查询请求语句
-      //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!未完成
-      db.collection('storage').where({
-        发动机: this.data.typeEngine[this.data.indexEngine]
-      }).get().then(res =>{
+      //动态构造where查询条件
+      var whereCondition = {}
+      if (this.data.indexConfiguration != 0) {
+        whereCondition.配置 = this.data.typeConfiguration[this.data.indexConfiguration]
+      }
+      if (this.data.indexEcusupplier != 0) {
+        whereCondition.ECU供应商 = this.data.typeEcusupplier[this.data.indexEcusupplier]
+      }
+      if (this.data.indexEmission != 0) {
+        whereCondition.排放 = this.data.typeEmission[this.data.indexEmission]
+      }
+      if (this.data.indexEngine != 0) {
+        whereCondition.发动机 = this.data.typeEngine[this.data.indexEngine]
+      }
+      if (this.data.indexPhase != 0) {
+        whereCondition.车辆阶段 = this.data.typePhase[this.data.indexPhase]
+      }
+      if (this.data.indexTransmission != 0) {
+        whereCondition.变速器 = this.data.typeTransmission[this.data.indexTransmission]
+      }
+      //console.log(whereCondition)
+      db.collection('storage').where(whereCondition).get().then(res => {
+        console.log(res)
+      }).catch(res => {
+        console.log("报错")
         console.log(res)
       })
+
     }
     //页面跳转
   }
