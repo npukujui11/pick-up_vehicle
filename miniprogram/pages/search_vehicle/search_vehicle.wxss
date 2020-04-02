@@ -10,7 +10,7 @@
 .btn {
   width: 80%;
   margin-top: 20rpx;
-  background-color: burlywood;
+  background-color: #FF9999;
   color: white;
   border-radius: 98rpx;
   display: flex;
@@ -26,17 +26,24 @@
 }
 
 .btn::after {
+  background: #FF9999;
   border-radius: 98rpx;
   border: 0; 
 }
 
-
 .imagesize {
- display: flex;                
- justify-content: center;         
+  padding: 90rpx 0 0 0;
+  background-color: #FF6666;
+  height: 340rpx;
+  display: flex;                
+  justify-content: center;         
 }
 
 .imagesize image { 
-  width: 400rpx;
-  height: 400rpx;
+  display: block;
+  margin: 0 auto;
+  border: 12rpx #FF9999 solid;
+  border-radius: 50%;
+  width: 200rpx;
+  height: 200rpx;
 }

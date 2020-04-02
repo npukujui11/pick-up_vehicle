@@ -1,23 +1,23 @@
 {
   "pages": [
     "pages/search_vehicle/search_vehicle",
-    "pages/me/me",
-    "pages/login/login"
+    "pages/me/me"
   ],
   "tabBar": {
     "list": [
       {
-        "iconPath": "images/search-1.png",
-        "selectedIconPath": "images/search.png",
+        "iconPath": "images/shi1.png",
+        "selectedIconPath": "images/shi1.png",
         "pagePath": "pages/search_vehicle/search_vehicle",
         "text": "车辆信息查询"
       },
       {
-        "iconPath": "images/tj-1.png",
-        "selectedIconPath": "images/tj.png",
+        "iconPath": "images/wo.png",
+        "selectedIconPath": "images/wo.png",
         "pagePath": "pages/me/me",
         "text": "我的"
       }
+
     ]
   },
   "window": {
